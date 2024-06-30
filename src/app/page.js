@@ -8,15 +8,12 @@ import { useInView } from "react-intersection-observer";
 export default function Home() {
   const [ref, inView] = useInView();
   const [transform, setTransform] = useState("-100%");
-  const [animation, setAnimation] = useState("");
 
   useEffect(() => {
     if(inView) {
       setTransform("0%");
-      setAnimation("rotate");
     } else {
       setTransform("-100%");
-      setAnimation("");
     }
   }, [inView]);
 
